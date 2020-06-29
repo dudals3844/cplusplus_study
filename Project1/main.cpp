@@ -1,18 +1,21 @@
 #include <iostream>
 
 int main() {
-	int a = 5;
+	int arr_size;
+	std::cout << "array size: ";
+	std::cin >> arr_size;
+	int* list = new int[arr_size];
 
-	int* p = new int;
-	*p = 10;
+	for (int i = 0; i < arr_size; i++)
+	{
+		std::cin >> list[i];
+	}
+	for (int i = 0; i < arr_size; i++)
+	{
+		std::cout << i << "th element of list" << list[i] << std::endl;
 
-	std::cout << *p << std::endl;
+	}
+	delete[] list;
 
-	std::cout << p << std::endl;
-
-	std::cout << &a << std::endl;
-	//errors
-	//delete& a;
-	delete p;
 	return 0;
 }
