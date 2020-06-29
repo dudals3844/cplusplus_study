@@ -4,30 +4,28 @@ using std::cout;
 using std::endl;
 using std::cin;
 
+// c언어에서의 방식
+//int change_val(int* p) {
+//	*p = 3;
+//	return 0;
+//}
+//
+//int main() {
+//	int number = 5;
+//	std::cout << number << endl;
+//	change_val(&number);
+//	std::cout << number << endl;
+//	return 0;
+//}
+
+// c++ 방식
 int main() {
-	int user_input;
-	cout << "Input information" << endl;
-	cout << "1, name " << endl;
-	cout << "2, age " << endl;
-	cout << "3. sex " << endl;
-	cin >> user_input;
+	int a = 3;
+	// reference
+	int& another_a = a;
 
-	switch (user_input)
-	{
-	case 1:
-		cout << "psy" << endl;
-		break;
-
-	case 2:
-		cout << "24" << endl;
-		break;
-		
-	case 3:
-		cout << "male" << endl;
-		break;
-
-	default:
-		break;
-	}
+	another_a = 5;
+	std::cout << "a: " << a << std::endl;
+	std::cout << "another_a: " << another_a << std::endl;
 	return 0;
 }
