@@ -1,24 +1,33 @@
 #include <iostream>
 
+using std::cout;
+using std::endl;
+using std::cin;
+
 int main() {
-	int lucky_number = 3;
-	std::cout << "pick my number	" << std::endl;
-
 	int user_input;
+	cout << "Input information" << endl;
+	cout << "1, name " << endl;
+	cout << "2, age " << endl;
+	cout << "3. sex " << endl;
+	cin >> user_input;
 
-	while (1)
+	switch (user_input)
 	{
-		std::cout << "Input: ";
-		std::cin >> user_input;
-		if (lucky_number == user_input) 
-		{
-			std::cout << "wow" << std::endl;
-			break;
-		}
-		else
-		{
-			std::cout << "other number" << std::endl;
-		}
+	case 1:
+		cout << "psy" << endl;
+		break;
+
+	case 2:
+		cout << "24" << endl;
+		break;
+		
+	case 3:
+		cout << "male" << endl;
+		break;
+
+	default:
+		break;
 	}
 	return 0;
 }
