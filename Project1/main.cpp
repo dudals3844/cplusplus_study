@@ -1,13 +1,18 @@
 #include <iostream>
 
-int& function() {
-	int a = 2;
-	return a;
-}
-
 int main() {
-	int b = function();
-	b = 3;
+	int a = 5;
+
+	int* p = new int;
+	*p = 10;
+
+	std::cout << *p << std::endl;
+
+	std::cout << p << std::endl;
+
+	std::cout << &a << std::endl;
+	//errors
+	//delete& a;
+	delete p;
 	return 0;
 }
-
