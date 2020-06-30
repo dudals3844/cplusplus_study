@@ -3,67 +3,33 @@
 
 using namespace std;
 
-class Book
+
+class NUMBOX
 {
 private:
-	int current_page_;
-	void set_percent();
-	const Book& ThickerBook(const Book& comp_book);
+	int num1, num2;
+
 public:
-	string title_;
-	int total_page_;
-	double percent_;
-	void Move(int page);
-	void Open();
-	void Read();
-	Book(const string& title, int total_page);
-	~Book();
+	NUMBOX(int num1, int num2):num1(num1), num2(num2){}
+	void ShowNumber() {
+		cout << num1 << ' ' << num2 << endl;
+
+	}
+	NUMBOX operator+(NUMBOX& ref)
+	{
+		return NUMBOX(num1 + ref.num1, num2 + ref.num2);
+	}
 };
 
-
 int main(void) {
-	Book web_book("HTML", 350);
-	Book html_book("HTML Reference", 200);
-	cout << web_book.percent_;
-	
+	NUMBOX nb1(1, 10);
+	NUMBOX nb2(5, 2);
+
+	NUMBOX result = nb1 + nb2;
+
+	nb1.ShowNumber();
+	nb2.ShowNumber();
+	result.ShowNumber();
 	return 0;
 }
 
-
-Book::Book(const string& title, int total_page)
-{
-	title_ = title;
-	total_page_ = total_page;
-	current_page_ = 0;
-	set_percent();
-}
-
-void Book::set_percent() { percent_ = (double)current_page_ / total_page_ * 100; }
-
-
-Book::~Book()
-{
-	cout << "¼Ò¸êÀÚ È£Ãâ" << endl;
-}
-
-const Book& Book::ThickerBook(const Book& comp_book)
-
-{
-
-	if (comp_book.total_page_ > this->total_page_)
-
-	{
-
-		return comp_book;
-
-	}
-
-	else
-
-	{
-
-		return *this;
-
-	}
-
-}
