@@ -6,20 +6,21 @@ class Date {
 	int day_;
 
 public:
-	void SetDate(int year, int month, int date);
+	
 	void AddDay(int inc);
 	void AddMonth(int inc);
 	void AddYear(int inc);
 
 	int GetCurrentMonthTotalDays(int year, int month);
 	void ShowDate();
+
+    Date(int year, int month, int day) {
+        year_ = year;
+        month_ = month;
+        day_ = day;
+    }
 };
 
-void Date::SetDate(int year, int month, int day) {
-	year_ = year;
-	month_ = month;
-	day_ = day;
-}
 
 int Date::GetCurrentMonthTotalDays(int year, int month) {
     static int month_day[12] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
@@ -69,11 +70,7 @@ void Date::ShowDate() {
 
 
 int main() {
-    Date day;
-    day.SetDate(2020, 6, 30);
-    day.ShowDate();
-
-    day.AddDay(30);
+    Date day(2020, 6, 30);
     day.ShowDate();
 	return 0;
 }
