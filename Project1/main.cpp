@@ -14,10 +14,10 @@ public:
 	int GetCurrentMonthTotalDays(int year, int month);
 	void ShowDate();
 
-    Date(int year, int month, int day) {
-        year_ = year;
-        month_ = month;
-        day_ = day;
+    Date() {
+        year_ = 2020;
+        month_ = 6;
+        day_ = 3;
     }
 };
 
@@ -70,7 +70,7 @@ void Date::ShowDate() {
 
 
 int main() {
-    Date day(2020, 6, 30);
+    Date day;
     day.ShowDate();
 	return 0;
 }
