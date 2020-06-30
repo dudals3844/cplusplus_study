@@ -1,21 +1,17 @@
 #include <iostream>
 
+void print(int x) { std::cout << "int: " << x << std::endl; }
+void print(char x) { std::cout << "char: " << x << std::endl; }
+void print(double x) { std::cout << "double: " << x << std::endl; }
+
 int main() {
-	int arr_size;
-	std::cout << "array size: ";
-	std::cin >> arr_size;
-	int* list = new int[arr_size];
+	int a = 1;
+	char b = 'c';
+	double c = 3.2f;
 
-	for (int i = 0; i < arr_size; i++)
-	{
-		std::cin >> list[i];
-	}
-	for (int i = 0; i < arr_size; i++)
-	{
-		std::cout << i << "th element of list" << list[i] << std::endl;
-
-	}
-	delete[] list;
+	print(a);
+	print(b);
+	print(c);`
 
 	return 0;
 }
