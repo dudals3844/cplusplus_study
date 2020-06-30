@@ -3,19 +3,22 @@
 
 using namespace std;
 
-void Local(int&);
+void Swap(int& x, int& y) {
+	int temp;
 
-int main() {
-	int var = 10;
-	cout << "Initail variable" << var << endl;
-
-	Local(var);
-
-	cout << var << endl;
-
-	return 0;
+	temp = x;
+	x = y;
+	y = temp;
 }
 
-void Local(int& num) {
-	num += 10;
+
+int main(void) {
+	int num1 = 3, num2 = 7;
+	cout << num1 << ' ' << num2 << endl;
+
+	Swap(num1, num2);
+
+	cout << num1 << ' ' << num2 << endl;
+	return 0;
+
 }
