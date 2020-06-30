@@ -4,22 +4,26 @@
 using namespace std;
 
 class A {
-	int num;
 
 public:
-	A(int num) {
-		this->num = num;
+	int num = 10;
+	void print_This() {
+		cout << this << endl;
 	}
-
-	int get_Num() {
-		return num;
+	
+	A& return_This() {
+		return *this;
 	}
 };
 
 
 int main(void) {
-	A a(10);
-	cout << a.get_Num() << endl;
+	A a;
+	a.print_This();
+	A& ref = a.return_This();
+	ref.print_This();
+	printf("a狼 林家 蔼 %d\n", &a);
+	printf("ref狼 林家 蔼 %d\n", &ref);
 	return 0;
 }
 
