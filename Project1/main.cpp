@@ -3,28 +3,26 @@
 
 using namespace std;
 
-class A {
+int main() {
 
-public:
-	int num = 10;
-	void print_This() {
-		cout << this << endl;
+	string dog;
+	cout << "dog str length " << dog.length() << endl;
+
+	dog = "Navi";
+	cout << "dog str length " << dog.length() << endl;
+
+	string str1 = "C++ is very nice!";
+
+	string str2 = "ava";
+
+	string str3 = "awesome";
+
+	string::size_type index = str1.find(str2);
+	cout << string::npos << endl;
+	if (index != string::npos) {
+		str1.replace(index, str2.length(), str3);
 	}
-	
-	A& return_This() {
-		return *this;
-	}
-};
 
-
-int main(void) {
-	A a;
-	a.print_This();
-	A& ref = a.return_This();
-	ref.print_This();
-	printf("a狼 林家 蔼 %d\n", &a);
-	printf("ref狼 林家 蔼 %d\n", &ref);
 	return 0;
 }
-
 
