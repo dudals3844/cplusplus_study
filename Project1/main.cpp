@@ -3,25 +3,28 @@
 
 using namespace std;
 
+static int var;
 void Local(void);
-void StaticVar(void);
 
 int main(void) {
-	for (int i = 0; i < 3; i++) {
+	cout << "Initial variable" << var << endl;
+	int i = 5;
+	int var = 10;
+	cout << "Main function var is " << var << endl;
+
+	if (i < 10) {
 		Local();
-		StaticVar();
+		cout << "Now var is " << var << endl;
+
 	}
+
+	cout << var << endl;
+
+	cout << "No more var in main function " << endl;
 	return 0;
 }
 
 void Local(void) {
-	int count = 1;
-	cout << "Local" << count << endl;
-	count++;
-}
-
-void StaticVar(void) {
-	static int static_count = 1;
-	cout << "Static Var" << static_count << endl;
-	static_count++;
+	var = 20;
+	cout << "Local function var is " << var << endl;
 }
