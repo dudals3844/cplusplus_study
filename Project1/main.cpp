@@ -3,33 +3,45 @@
 
 using namespace std;
 
-
-class NUMBOX
+class Person
 {
 private:
-	int num1, num2;
+	string name_;
+	int age_;
 
 public:
-	NUMBOX(int num1, int num2):num1(num1), num2(num2){}
-	void ShowNumber() {
-		cout << num1 << ' ' << num2 << endl;
-
-	}
-	NUMBOX operator+(NUMBOX& ref)
-	{
-		return NUMBOX(num1 + ref.num1, num2 + ref.num2);
-	}
+	static int person_count_;
+	static int person_count();
+	Person(const string& name, int age);
+	~Person() { person_count_--; }
+	void ShowPersonInfo();
 };
 
+int Person::person_count_ = 0;
+int Person::person_count()
+{
+	return person_count_;
+}
+
+
+
 int main(void) {
-	NUMBOX nb1(1, 10);
-	NUMBOX nb2(5, 2);
+	Person hong("choi", 25);
+	Person lee("young", 22);
+	cout << Person::person_count() << endl;
 
-	NUMBOX result = nb1 + nb2;
 
-	nb1.ShowNumber();
-	nb2.ShowNumber();
-	result.ShowNumber();
 	return 0;
 }
 
+Person::Person(const string& name, int age)
+{
+	name_ = name;
+	age_ = age;
+	cout << ++person_count_ << " 번째 사람이 생성되었습니다." << endl;
+}
+
+void Person::ShowPersonInfo()
+{
+	cout << "이 사람의 이름은 " << name_ << "이고, 나이는 " << age_ << "살입니다." << endl;
+}
