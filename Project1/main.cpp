@@ -3,37 +3,28 @@
 
 using namespace std;
 
-class Animal
-{
-public:
-	virtual ~Animal(){}
-	virtual void Cry() = 0;
-};
-
-
-class Dog : public Animal {
-public:
-	virtual void Cry() {
-		cout << "crying" << endl;
-	}
-};
-
-class Cat : public Animal
-{
-public:
-	virtual void Cry() {
-		cout << "ya ong" << endl;
-	}
-};
-
+template <typename T>
+void Swap(T& a, T& b);
 
 int main(void) {
-	Dog my_dog;
-	my_dog.Cry();
-	Cat my_cat;
-	my_cat.Cry();
-	
+	int c = 2, d = 3;
+	cout << "c: " << c << ", d:" << d << endl;
+	Swap(c, d);
+	cout << "c: " << c << ", d:"<< d << endl;
+
+	string e = "hong", f = "kim";
+	cout << "e: " << e << ", f: " << f << endl;
+	Swap(e, f);
+	cout << "e: " << e << ", f: " << f << endl;
 	return 0;
 }
 
+template <typename T>
+void Swap(T& a, T& b)
+{
+	T temp;
+	temp = a;
+	a = b;
+	b = temp;
+}
 
