@@ -3,47 +3,36 @@
 
 using namespace std;
 
-class Person
+class A
 {
-private:
-	string name_;
-	int age_;
-
 public:
-	
-	Person(const string& name, int age);
-	
-	void ShowPersonInfo();
+	virtual void Print() {
+		cout << "A class Print function" << endl;
+	}
+
 };
 
-Person::Person(const string& name, int age)
+class B : public A
 {
-	name_ = name;
-	age_ = age;
-}
-
-class Student :public Person {
-private:
-	int student_id_;
-public:
-	Student(int sid, const string& name, int age);
+	virtual void Print() {
+		cout << "B class Print function" << endl;
+	}
 };
+
 
 int main(void) {
+	A* ptr;
+	A obj_a;
+	B obj_b;
 
-	Student hong(123123, "choi", 25);
-	hong.ShowPersonInfo();
+	ptr = &obj_a;
+	ptr->Print();
+	//B 클래스로 타입이 변경된다.
+	ptr = &obj_b;
+	ptr->Print();
+
+	
 	return 0;
 }
 
 
-
-Student::Student(int sid, const string& name, int age) : Person(name, age)
-{
-	student_id_ = sid;
-}
-
-void Person::ShowPersonInfo()
-{
-	cout << name_ << "의 나이는 " << age_ << "살입니다." << endl;
-}
