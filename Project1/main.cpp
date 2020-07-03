@@ -3,34 +3,35 @@
 
 using namespace std;
 
-class A
+class Animal
 {
 public:
-	virtual void Print() {
-		cout << "A class Print function" << endl;
-	}
-
+	virtual ~Animal(){}
+	virtual void Cry() = 0;
 };
 
-class B : public A
+
+class Dog : public Animal {
+public:
+	virtual void Cry() {
+		cout << "crying" << endl;
+	}
+};
+
+class Cat : public Animal
 {
-	virtual void Print() {
-		cout << "B class Print function" << endl;
+public:
+	virtual void Cry() {
+		cout << "ya ong" << endl;
 	}
 };
 
 
 int main(void) {
-	A* ptr;
-	A obj_a;
-	B obj_b;
-
-	ptr = &obj_a;
-	ptr->Print();
-	//B 클래스로 타입이 변경된다.
-	ptr = &obj_b;
-	ptr->Print();
-
+	Dog my_dog;
+	my_dog.Cry();
+	Cat my_cat;
+	my_cat.Cry();
 	
 	return 0;
 }
