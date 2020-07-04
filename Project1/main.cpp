@@ -4,27 +4,32 @@
 using namespace std;
 
 template <typename T>
-void Swap(T& a, T& b);
+
+class Data {
+private:
+	T data_;
+public:
+	Data(T dt);
+	T get_data();
+};
+
 
 int main(void) {
-	int c = 2, d = 3;
-	cout << "c: " << c << ", d:" << d << endl;
-	Swap(c, d);
-	cout << "c: " << c << ", d:"<< d << endl;
+	Data<string> str_data("C++");
+	Data<int> int_data(12);
 
-	string e = "hong", f = "kim";
-	cout << "e: " << e << ", f: " << f << endl;
-	Swap(e, f);
-	cout << "e: " << e << ", f: " << f << endl;
+	cout << "str_data" << str_data.get_data() << endl;
+	cout << "int_data" << int_data.get_data() << endl;
 	return 0;
 }
 
+
 template <typename T>
-void Swap(T& a, T& b)
-{
-	T temp;
-	temp = a;
-	a = b;
-	b = temp;
+Data<T>::Data(T dt) {
+	data_ = dt;
 }
 
+template <typename T>
+T Data<T>::get_data() {
+	return data_;
+}
