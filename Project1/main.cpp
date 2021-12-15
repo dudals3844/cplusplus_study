@@ -1,20 +1,23 @@
 #include <iostream>
 
+using std::cout;
+using std::endl;
+using std::cin;
+
 int main() {
-    int lucky_number = 3;
-    std::cout << "숫자를 맞춰보세요." << std::endl;
-
     int user_input;
+    cin >> user_input;
 
-    while (1) {
-        std::cout << "Input: ";
-        std::cin >> user_input;
-        if (lucky_number == user_input) {
-            std::cout << "정답!!" << std::endl;
+    switch (user_input) {
+        case 1:
+            cout << "Choi" << endl;
             break;
-        } else {
-            std::cout << "오답입니다." << std::endl;
-        }
+        case 2:
+            cout << "Young" << endl;
+            break;
+        default:
+            cout << "궁금한게 없다" << endl;
+            break;
     }
     return 0;
 }
