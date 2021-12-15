@@ -1,11 +1,9 @@
 #include <iostream>
 
-// ? ??? ???? ???.
-//using namespace std;
-
 int main() {
-    std::cout << "Hello" << std::endl
-              << "My name is "
-              << "Psi" << std::endl;
+    int i;
+    for (i = 0; i < 10; i++) {
+        std::cout << i << std::endl;
+    }
     return 0;
 }
