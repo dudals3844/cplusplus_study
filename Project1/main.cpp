@@ -1,10 +1,8 @@
 #include <iostream>
 
-
+// 상수를 참조할 수 없다.
 int main() {
-    int a = 10;
-    int *p = &a;
-    std::cout << p << std::endl;
-    std::cout << *p << std::endl;
+    int &ref = 4;
+    std::cout << ref <<std::endl;
     return 0;
 }
