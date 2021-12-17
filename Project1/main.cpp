@@ -1,13 +1,17 @@
 #include <iostream>
 
-int& function() {
-    int a = 2;
+int &function(int &a) {
+    // parameter로 받은 메모리 주소가 온다.
+    a = 5;
+    std::cout << "a: " << &a << std::endl;
     return a;
 }
-// return하면서 function의 a는 사라진다.
+
 int main() {
-    int b = function();
-    b = 3;
-    std::cout << b << std::endl;
+    int b = 2;
+    std::cout << "b: " << &b << std::endl;
+    // c에 할당되므로 메모리 주소가 변경된다.
+    int c = function(b);
+    std::cout << "c: " << &c << std::endl;
     return 0;
 }
