@@ -2,8 +2,16 @@
 
 
 int main() {
-    // Heap 공간을 해제하려고 해서 오류가 난다.
-    int a = 5;
-    delete &a;
+    int arr_size = 10;
+    int *list = new int[arr_size];
+    std::cout << list << std::endl;
+    for (int i = 0; i < arr_size; i++) {
+        list[i] = i;
+    }
+    for (int i = 0; i < arr_size; i++) {
+        std::cout << "Element of list: " << list[i] << std::endl;
+    }
+
+    delete[] list;
     return 0;
 }
