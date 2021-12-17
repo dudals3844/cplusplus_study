@@ -6,10 +6,10 @@ class Date {
     int day_;
 
 public:
-    void SetDate(int year, int month, int date){
+    Date(int year, int month, int day){
         year_ = year;
         month_ = month;
-        day_ = date;
+        day_ = day;
     }
 
     void AddDay(int inc);
@@ -64,8 +64,7 @@ void Date::ShowDate() {
 }
 
 int main() {
-    Date day{};
-    day.SetDate(2011, 3, 1);
+    Date day(2011, 3, 11);
     day.AddDay(365);
     day.ShowDate();
     return 0;
