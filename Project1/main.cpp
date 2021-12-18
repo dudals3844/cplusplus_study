@@ -7,10 +7,18 @@ class Date {
 
 
 public:
-    Date(){
+    Date() {
+        std::cout << "기본 생성자 호출" << std::endl;
         year_ = 2012;
         month_ = 7;
         day_ = 12;
+    }
+
+    Date(int year, int month, int day) {
+        std::cout << "인자 3개인 생성자 호출" << std::endl;
+        year_ = year;
+        month_ = month;
+        day_ = day;
     }
 
     void AddDay(int inc);
@@ -66,8 +74,9 @@ void Date::ShowDate() {
 
 int main() {
     Date day = Date();
-    Date day2;
     day.ShowDate();
+
+    Date day2(2011, 10, 23);
     day2.ShowDate();
     return 0;
 }
