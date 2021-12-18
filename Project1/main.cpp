@@ -5,11 +5,12 @@ class Date {
     int month_;
     int day_;
 
+
 public:
-    Date(int year, int month, int day){
-        year_ = year;
-        month_ = month;
-        day_ = day;
+    Date(){
+        year_ = 2012;
+        month_ = 7;
+        day_ = 12;
     }
 
     void AddDay(int inc);
@@ -64,8 +65,9 @@ void Date::ShowDate() {
 }
 
 int main() {
-    Date day(2011, 3, 11);
-    day.AddDay(365);
+    Date day = Date();
+    Date day2;
     day.ShowDate();
+    day2.ShowDate();
     return 0;
 }
