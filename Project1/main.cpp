@@ -1,15 +1,15 @@
 #include <iostream>
 
-// Call by address
-void func(int* ptr){
-    *ptr *= 2;
+// Call by reference
+void func(int& ptr){
+    ptr *= 2;
 }
 
 int main() {
     int n = 5;
-//    이것도 사실 단순한 (주소)값의 복사이기 때문에 주소가 가리키는 공간에 접근할 수 있는 것 뿐이지 더블포인터를 쓰지 않는 이상 포인터가 가리키는 대상(주소) 자체를 변경할 순 없다.
+//    레퍼런스로 전달 시(call by reference) 다음과 같이 매개변수를 참조형 변수로 주고 함수 호출 시 lvalue를 전달한다.
 
-            func(&n);
+    func(n);
     std::cout << n << std::endl;
     return 0;
 }
