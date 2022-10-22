@@ -1,13 +1,21 @@
 #include <iostream>
 
-int main(){
-    // 메모리 주소로 생성
-    int *arr_size = new int;
 
-    std::cout << "array size :";
-    // 메모리 주소에 10을 할당
-    *arr_size = 10;
-    // 주소에 있는 값을 출력
-    std::cout << *arr_size;
+int main() {
+    int arr[10];
 
+    int length = sizeof(arr) / sizeof(int);
+
+    for (int i = 0; i < length; ++i) {
+        arr[i] = i;
+    }
+
+
+    for (int i = 0; i < length; ++i) {
+        std::cout << arr[i] << std::endl;
+    }
+
+    delete arr;
+
+    return 0;
 }
