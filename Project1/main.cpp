@@ -1,16 +1,13 @@
 #include <iostream>
 
-int change_val(int *p) {
-    // 주소에 있는 값을 3으로 변경한다.
-    *p = 3;
-    return 0;
-}
 
 int main() {
-    int number = 5;
+    int a = 3;
+    // 참조자다. 즉 변수 a의 다른 이름이 another_a라고 알려 주는 것이다.
+    int &another_a = a;
 
-    std::cout << number << std::endl;
-    change_val(&number);
-    std::cout << number << std::endl;
+    another_a = 5;
+    std::cout << "a : " << a << std::endl;
+    std::cout << "another_a : " << another_a << std::endl;
     return 0;
 }
