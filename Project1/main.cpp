@@ -5,12 +5,12 @@ using std::cout;
 using std::endl;
 
 int main() {
-    char str[] = "sentence";
-    char *pstr = "sentence";
+    char str[] = "hello";
+    char *pstr = "goodbye";
 
-    printf("str : %s \n", str);
-    // 이상하다 setence는 주소값이 아니고 문자열인데 출력이 된다.
-    printf("pstr : %s \n", pstr);
+    str[1] = 'a';
+    cout << str << endl;
+//    pstr[1] = 'a';
 
     return 0;
 }
